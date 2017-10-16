@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Vue Js Tutorials</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+  <div id="vue-app">
+    <h1>{{greet('afternoon')}}</h1>
+    <input type="text" :value="name">
+    <a v-bind:href="website">Calendar of {{name}}</a>
+    <p v-html="websiteTag"></p>
+    <p>Name: {{name}}</p>
+    <p>Job is: {{job}}</p>
+
+    <h2>Events</h2>
+    <button v-on:click="add(1)">Add a Year</button>
+    <button v-on:click="subtract(1)">Subtract a Year</button>
+    <button v-on:dblclick="add(10)">Add 10 Year</button>
+    <button v-on:dblclick="subtract(10)">Subtract 10 Year</button>
+    <p>My age is {{age}}</p>
+    <div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+
+    <div class="keybordEvents">
+      <p>Keybord Events</p>
+      <label>Name: </label>
+      <input type="text" v-model="name">
+      <p>{{name}}</p>
+      <label>Age: </label>
+      <input type="text" v-model="age">
+      <p>{{age}}</p>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
